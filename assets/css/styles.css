@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Taviraj:ital,wght@0,400;1,200;1,900&display=swap');
 
 
+
 /* Variables */
 :root {
     --font-brand: Tangerine, serif;
@@ -47,7 +48,11 @@ a {
 
 a:hover {
     color: var(--secondary-shadow);
+    cursor: pointer;
+}
 
+.bio-title {
+    color: var(--brand-color);
 }
 
 nav span {
@@ -317,6 +322,11 @@ p.bio-text::first-letter, p.more-about-text::first-letter {
     border-radius: 50%;
 }
 
+.socicon:hover {
+    box-shadow: 0 0 12px var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 footer {
     background-color: var(--tertiary-color);
     padding: 1.25rem;
@@ -324,3 +334,15 @@ footer {
     margin: 2rem 0 0;
   }
 
+.second-set {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1; /* default layer */
+}
+
+
+.icon-card:hover {
+    transform: scale(2.5);
+    box-shadow: 0 0 12px var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}

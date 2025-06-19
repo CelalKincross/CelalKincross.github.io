@@ -14,10 +14,7 @@
 
 
 ## General Information
-- I have traveled and learned Mandarin Chinese, enough French to complete a year of studies at a Parisan university, and now, enough HTML, Javascript, CSS3 and other technologies to complete this on going portfolio website. I hope this website demostrates my on going and relentless pursuit of knowledge. 
-
-- I started using my Taiwanese name Yang-Lee Young (勇洋理) in place of my birth name John Dall'Olio. So, while the latter is my official name, the former is the name I am most often called and is subsequently on the website favicon. 
-
+- This website is to showcase my cybersecurity endeavours. It is a work in progress.
 
 ## Technologies Used
 - HTML
@@ -57,7 +54,7 @@ To do:
 ## Acknowledgements
 - Inspired by Angela's Yu Web Dev Bootcamp and based on Ksound's [FreeCodeCamp Tutorials](https://www.FreeCodeCamp.com). 
 - [How to write a good README](https://bulldogjob.com/readme/how-to-write-a-good-readme-for-your-github-project)
-- Many thanks to all those self-taught/bootcamp devs out there who insisted I keep on keeping on.
+- Many thanks to all who helped me along the way and continue to do so!
 
 
 ## Contact
