@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <title>Automating Linux Administration Tasks | John Dall'Olio</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+
+    <!-- Google material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/218430bc99.js" crossorigin="anonymous"></script>
+    <style>
+        .post-content h2 { text-align: left; margin-top: 2rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; }
+        .post-content h3 { margin-top: 1.5rem; color: var(--accent-color); }
+        .post-content pre { background: #f4f4f4; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0; border: 1px solid #ddd; }
+        .post-content code { font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; }
+        .post-content ul { list-style: disc; padding-left: 2rem; margin: 1rem 0; }
+        .post-content li { margin-bottom: 0.5rem; }
+        .post-header { text-align: center; margin-bottom: 3rem; }
+        .post-meta { color: var(--text-muted); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <!-- Nav Bar -->
+    <nav>
+        <div>
+            <span><b>John Dall'Olio</b></span>
+        </div>
+        <ul class="navigation">
+            <li><a href="../index.html" class="nav">Home</a></li>
+            <li><a href="../cv.html" class="nav">CV</a></li>
+            <li><a href="../blog.html" class="nav" style="color: var(--accent-color)">Blog</a></li>
+            <li><a href="../index.html#contact" class="nav">Contact</a></li>
+        </ul>
+        <button class="burger-menu" id="burger-menu">
+            <span class="material-icons">menu</span>
+        </button>
+    </nav>
+
+    <!-- Blog Post Content -->
+    <article class="post-section" style="max-width: 900px; margin: 0 auto; padding: 4rem 5%;">
+        <div class="post-header">
+            <h1 style="font-size: 2.5rem; color: var(--accent-color);">Building a Research Computing Lab at Home</h1>
+            <p style="font-size: 1.2rem; margin-top: 0.5rem;">From Linux Fundamentals to Automated Backups and Ansible</p>
+            <div class="post-meta" style="margin-top: 1rem;">January 2, 2026 | System Administration</div>
+        </div>
+
+        <div class="post-content">
+            <p>I wanted to practice real system administration, not isolated commands or “hello world” automation. Specifically, I wanted to simulate a research computing environment where nodes have distinct roles and automation is native.</p>
+
+            <h2>Lab Architecture</h2>
+            <ul>
+                <li><strong>lab-admin:</strong> Control plane + authoritative storage (NFS server)</li>
+                <li><strong>lab-compute:</strong> Researcher-facing compute node (NFS client)</li>
+                <li><strong>lab-backup:</strong> Reserved for off-host backups</li>
+                <li><strong>Mac workstation:</strong> Admin control node (SSH + Ansible)</li>
+            </ul>
+
+            <h2>Linux Foundations: Multi-User Semantics</h2>
+            <p>First, I set up the user environment to simulate a collaborative research team.</p>
+            <pre><code>sudo adduser alice
+sudo adduser bob
+sudo adduser carol
+
+sudo groupadd researchers
+sudo groupadd project1
+
+sudo usermod -aG researchers alice
+sudo usermod -aG researchers bob
+sudo usermod -aG researchers carol
+
+sudo usermod -aG project1 alice
+sudo usermod -aG project1 bob</code></pre>
+
+            <h3>Shared Directory Layout</h3>
+            <pre><code>sudo mkdir -p /research/project1
+sudo chown root:researchers /research
+sudo chmod 2775 /research
+
+sudo chown root:project1 /research/project1
+sudo chmod 2770 /research/project1</code></pre>
+            <p>The <code>setgid</code> bit ensures that new files inherit the group ownership of the directory, facilitating seamless collaboration.</p>
+
+            <h2>Shared Storage with NFS</h2>
+            <p>To share data across nodes, I implemented NFS (Network File System).</p>
+            <h3>NFS Server Configuration</h3>
+            <pre><code># /etc/exports
+/research lab-compute(rw,sync,no_subtree_check)</code></pre>
+
+            <h2>Automation with systemd</h2>
+            <p>I moved away from legacy cron jobs in favor of systemd timers for better logging and dependency management.</p>
+            <h3>Health Check Script</h3>
+            <pre><code>#!/bin/bash
+TARGET="/research"
+LOGTAG="research-check"
+
+if mountpoint -q "$TARGET"; then
+    logger -t "$LOGTAG" "OK: $TARGET is mounted"
+    exit 0
+else
+    logger -t "$LOGTAG" "FAIL: $TARGET is NOT mounted"
+    exit 1
+fi</code></pre>
+
+            <h2>Automated Backups</h2>
+            <p>Using <code>rsync</code> with <code>--link-dest</code>, I created a snapshot-style backup system that is efficient on storage.</p>
+            <pre><code>#!/bin/bash
+set -eu
+SRC="/research/"
+DEST="/var/backups/research"
+TODAY="$(date +%F)"
+SNAPSHOT="$DEST/daily-$TODAY"
+CURRENT="$DEST/current"
+
+rsync -a --numeric-ids --delete --link-dest="$CURRENT" "$SRC" "$SNAPSHOT"
+rm -f "$CURRENT"
+ln -s "$SNAPSHOT" "$CURRENT"</code></pre>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li><strong>systemd timers > cron</strong> for robust infrastructure.</li>
+                <li><strong>Backups must be restored</strong> to be trusted.</li>
+                <li><strong>Good system administration</strong> makes correct behavior boring.</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 4rem; text-align: center;">
+            <a href="../blog.html" style="color: var(--accent-color); font-weight: 600;">&larr; Back to Blog</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p class="copy">&copy; Copyright 2026 John Dall'Olio</p>
+    </footer>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

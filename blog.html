@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Blog | John Dall'Olio</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+
+    <!-- Google material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/218430bc99.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Nav Bar -->
+    <nav>
+        <div>
+            <span><b>John Dall'Olio</b></span>
+        </div>
+        <ul class="navigation">
+            <li><a href="index.html" class="nav">Home</a></li>
+            <li><a href="cv.html" class="nav">CV</a></li>
+            <li><a href="blog.html" class="nav" style="color: var(--accent-color)">Blog</a></li>
+            <li><a href="index.html#contact" class="nav">Contact</a></li>
+        </ul>
+        <button class="burger-menu" id="burger-menu">
+            <span class="material-icons">menu</span>
+        </button>
+    </nav>
+
+    <!-- Blog Section -->
+    <section class="blog-section" style="max-width: 800px; margin: 0 auto; padding: 4rem 5%; min-height: 70vh;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 3rem; color: var(--accent-color); text-align: center;">Insights & Writings</h1>
+        
+        <!-- Blog Post 1 -->
+        <article class="blog-post" style="margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #eee;">
+            <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; text-align: left;">Automating Linux Administration Tasks</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">January 2, 2026 | System Administration</p>
+            <p style="margin-bottom: 1rem;">
+                Automation is the key to efficient system administration. In this post, I explore how simple Bash scripts can save hours of manual work in a Linux environment...
+            </p>
+            <a href="blog/automating-linux-admin.html" style="color: var(--accent-color); font-weight: 600;">Read more &rarr;</a>
+        </article>
+
+        <!-- Blog Post 2 -->
+        <article class="blog-post" style="margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #eee;">
+            <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; text-align: left;">Handling a Zero-Day Vulnerability</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">July 14, 2025 | Incident Response</p>
+            <p style="margin-bottom: 1rem;">
+                In cybersecurity, a zero-day vulnerability is a race against time. A guide to navigating a serious security event from discovery to post-mortem...
+            </p>
+            <a href="blog/handling-zero-day.html" style="color: var(--accent-color); font-weight: 600;">Read more &rarr;</a>
+        </article>
+
+        <!-- Blog Post 3 -->
+        <article class="blog-post">
+            <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; text-align: left;">Securing the Global Supply Chain</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">July 14, 2025 | Cybersecurity</p>
+            <p style="margin-bottom: 1rem;">
+                In 2026, cybersecurity is no longer just about protecting your internal network; it is about the resilience of your entire ecosystem. A guide to framework-driven vendor management...
+            </p>
+            <a href="blog/securing-supply-chain.html" style="color: var(--accent-color); font-weight: 600;">Read more &rarr;</a>
+        </article>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="copy">&copy; Copyright 2026 John Dall'Olio</p>
+    </footer>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

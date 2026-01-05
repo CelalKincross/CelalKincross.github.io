@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <title>Handling a Zero-Day Vulnerability | John Dall'Olio</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+
+    <!-- Google material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/218430bc99.js" crossorigin="anonymous"></script>
+    <style>
+        .post-content h2 { text-align: left; margin-top: 2rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; }
+        .post-content h3 { margin-top: 1.5rem; color: var(--accent-color); font-size: 1.2rem; }
+        .post-content ul { list-style: disc; padding-left: 2rem; margin: 1rem 0; }
+        .post-content li { margin-bottom: 0.5rem; }
+        .post-header { text-align: center; margin-bottom: 3rem; }
+        .post-meta { color: var(--text-muted); font-size: 0.9rem; }
+        .checklist { background-color: #f9f9f9; padding: 2rem; border-radius: 8px; border: 1px solid #eee; margin-top: 2rem; }
+        .checklist h3 { margin-top: 0; border-bottom: none; color: var(--accent-color); }
+        .checklist ul { list-style: none; padding-left: 0; }
+        .checklist li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+        .checklist li::before { content: "☐"; font-size: 1.2rem; color: var(--accent-color); }
+    </style>
+</head>
+<body>
+    <!-- Nav Bar -->
+    <nav>
+        <div>
+            <span><b>John Dall'Olio</b></span>
+        </div>
+        <ul class="navigation">
+            <li><a href="../index.html" class="nav">Home</a></li>
+            <li><a href="../cv.html" class="nav">CV</a></li>
+            <li><a href="../blog.html" class="nav" style="color: var(--accent-color)">Blog</a></li>
+            <li><a href="../index.html#contact" class="nav">Contact</a></li>
+        </ul>
+        <button class="burger-menu" id="burger-menu">
+            <span class="material-icons">menu</span>
+        </button>
+    </nav>
+
+    <!-- Blog Post Content -->
+    <article class="post-section" style="max-width: 900px; margin: 0 auto; padding: 4rem 5%;">
+        <div class="post-header">
+            <h1 style="font-size: 2.5rem; color: var(--accent-color);">Handling a Zero-Day Vulnerability</h1>
+            <p style="font-size: 1.2rem; margin-top: 0.5rem;">A Strategic Response Guide</p>
+            <div class="post-meta" style="margin-top: 1rem;">July 14, 2025 | Incident Response</div>
+        </div>
+
+        <div class="post-content">
+            <p>In cybersecurity, a zero-day vulnerability is a race against time. When your R&D department is unable to resolve a critical issue within a required timeframe, the response must shift from standard patching to an emergency incident management protocol.</p>
+            
+            <p>Based on industry-standard frameworks like the Common Security Advisory Framework (CSAF) and MITRE, here is how to navigate a serious security event from discovery to post-mortem.</p>
+
+            <h2>Phase 1: Qualification & Severity Assessment</h2>
+            <p>Before initiating an emergency response, you must verify the technical validity of the threat.</p>
+            <ul>
+                <li><strong>Verify the Weakness:</strong> Confirm it is a true vulnerability (a weakness in computational logic impacting confidentiality, integrity, or availability) rather than poor security hygiene.</li>
+                <li><strong>The "Bug Bar":</strong> Cross-reference the issue with established standards to ensure it meets the threshold for a security bug.</li>
+                <li><strong>Score the Risk:</strong> Use a CVSS calculator to determine the severity range, focusing on attack surface (Web UI, API, CLI) and impact type (Safety, Availability, etc.).</li>
+            </ul>
+
+            <h2>Phase 2: The Incident Response "Situation Room"</h2>
+            <p>If a permanent fix is not immediately possible, you must establish a centralized command structure.</p>
+            <ul>
+                <li><strong>Assemble the Team:</strong> Your "Situation Room" should include Subject Matter Experts (Devs/Engineers), Legal, PR, and Executive leadership.</li>
+                <li><strong>Reproduce & Secure:</strong> Build a safe environment to reproduce the vulnerability and ensure all vulnerability data is stored securely.</li>
+                <li><strong>Temporary Workarounds:</strong> When remediation is not possible, the priority shifts to creating and validating temporary workarounds to protect users until a fix is ready.</li>
+            </ul>
+
+            <h2>Phase 3: Communication & Disclosure</h2>
+            <p>As a CVE Numbering Authority (CNA), you have a responsibility to manage the coordinated tracking of the vulnerability. This process should align with established industry standards, such as the <a href="https://www.first.org/standards/frameworks/psirts/psirt_maturity_document" target="_blank" style="color: var(--accent-color); text-decoration: underline;">FIRST PSIRT Services Framework</a>, which provides a roadmap for organizational maturity in vulnerability handling.</p>
+            <ul>
+                <li><strong>Stakeholder Advisories:</strong> Keep internal stakeholders (Sales, Support, Legal) informed of the expected timeline and support methods.</li>
+                <li><strong>Managed Disclosure:</strong> You may choose to withhold public disclosure until a fix is available, but you must update internal wikis with workaround details in the meantime.</li>
+                <li><strong>Risk Management:</strong> If no solution is found, document which stakeholders are accepting the residual risk.</li>
+            </ul>
+
+            <h2>Phase 4: Post-Mortem & Growth</h2>
+            <p>Every incident is a training opportunity. Once the fix is delivered, conduct a post-mortem to identify:</p>
+            <ul>
+                <li><strong>Communication Gaps:</strong> Where did information flow fail or slow down?</li>
+                <li><strong>Tooling Efficiency:</strong> Identify outdated tools or processes that hindered the response.</li>
+                <li><strong>Transferable Successes:</strong> Highlight processes or training that worked well so they can be adopted by other departments.</li>
+            </ul>
+
+            <div style="margin: 3rem 0; text-align: center; background: #f0f4f8; padding: 2rem; border-radius: 8px;">
+                <h3 style="margin-top: 0; color: var(--accent-color);">Download the Full Presentation</h3>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Get the detailed slides covering the PSIRT framework and zero-day response strategy.</p>
+                <a href="../assets/docs/psirt.pptx" download class="submit-btn" style="display: inline-block; width: auto; padding: 12px 30px; text-decoration: none;">
+                    <i class="fas fa-file-powerpoint" style="margin-right: 8px;"></i> Download Slides (PPTX)
+                </a>
+            </div>
+
+            <div class="checklist">
+                <h3>The Zero-Day Response Checklist</h3>
+                <p>Use this list during the first 24-48 hours of a discovery.</p>
+                
+                <h4>Verification</h4>
+                <ul>
+                    <li>Reproduce the vulnerability in a safe environment.</li>
+                    <li>Calculate the CVSS score (Critical, High, Medium, Low).</li>
+                    <li>Identify all affected products, firmware versions, and libraries.</li>
+                </ul>
+
+                <h4>Containment</h4>
+                <ul>
+                    <li>Establish a physical or virtual "Situation Room".</li>
+                    <li>Assign leads for Engineering, Legal, and PR.</li>
+                    <li>Develop and validate a temporary workaround.</li>
+                </ul>
+
+                <h4>Communication</h4>
+                <ul>
+                    <li>Notify internal stakeholders (Executives, Sales, Support).</li>
+                    <li>Update internal support wikis with temporary instructions.</li>
+                    <li>Draft a CSAF-compliant security advisory.</li>
+                </ul>
+
+                <h4>Resolution & Review</h4>
+                <ul>
+                    <li>Deliver and validate the final remedy/patch.</li>
+                    <li>Conduct a post-mortem to identify bottlenecks and training needs.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: 4rem; text-align: center;">
+            <a href="../blog.html" style="color: var(--accent-color); font-weight: 600;">&larr; Back to Blog</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p class="copy">&copy; Copyright 2026 John Dall'Olio</p>
+    </footer>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>
