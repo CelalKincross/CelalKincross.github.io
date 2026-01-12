@@ -41,7 +41,8 @@
     <section class="cv-section" style="max-width: 900px; margin: 0 auto; padding: 4rem 5%;">
         <div class="cv-header" style="text-align: center; margin-bottom: 3rem;">
             <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--accent-color);">JOHN DALL'OLIO</h1>
-            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1rem;">IT Support & Sys Admin | SOC Analyst</p>
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1rem;">Infrastructure & Security Engineer</p>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">Linux Systems • Platform Engineering • Detection & Security Operations • CISSP</p>
             <div class="cv-contact" style="font-size: 0.95rem; color: var(--text-muted);">
                 <p>Toronto, ON, Canada | jdallolio@gmail.com</p>
                 <p>
@@ -54,18 +55,19 @@
         <div class="cv-block" style="margin-bottom: 2.5rem;">
             <h2 style="text-align: left; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; font-size: 1.5rem;">Professional Summary</h2>
             <p style="margin-top: 1rem; color: var(--text-main);">
-                IT and cybersecurity professional with five years of combined experience supporting heterogeneous IT environments across academic, enterprise, and security operations contexts. Hands-on experience includes Linux-based systems support, IT troubleshooting in BYOD academic environments, SOC operations, automation labs, and computer science instruction. Strong background in documentation, operational improvement, and supporting technical and non-technical users. Military-trained with proven reliability, accountability, and ability to perform under pressure.
+                Infrastructure and security-focused engineer with 5+ years of experience operating and securing Linux-based systems across academic, enterprise, and production environments. Hands-on ownership of VPS infrastructure, containerized deployments, DNS, reverse proxy configuration, automated TLS, and detection pipelines. Background includes SOC operations, production system hardening, and secure infrastructure deployment. CISSP-certified with an engineering-first approach to security, emphasizing operational discipline, visibility, and building maintainable, explainable systems.
             </p>
         </div>
 
         <div class="cv-block" style="margin-bottom: 2.5rem;">
             <h2 style="text-align: left; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; font-size: 1.5rem;">Core Technical Skills</h2>
             <ul style="list-style-type: disc; padding-left: 1.5rem; margin-top: 1rem; color: var(--text-main);">
-                <li style="margin-bottom: 0.5rem;"><strong>Operating Systems:</strong> Linux (Ubuntu, Debian, RHEL-based), Windows, macOS.</li>
-                <li style="margin-bottom: 0.5rem;"><strong>Scripting & Automation:</strong> Bash scripting, Python for automation, Git & GitHub.</li>
-                <li style="margin-bottom: 0.5rem;"><strong>Networking:</strong> TCP/IP fundamentals, DNS, DHCP, Log collection/analysis.</li>
-                <li style="margin-bottom: 0.5rem;"><strong>Tools:</strong> ELK Stack (Elastic, Logstash, Kibana), NiFi, SentinelOne.</li>
-                <li style="margin-bottom: 0.5rem;"><strong>IT Operations:</strong> Documentation (SOPs), Hardware/Software troubleshooting, End-user support.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Operating Systems & Infrastructure:</strong> Linux (Ubuntu, Debian, RHEL-based), VPS administration, Windows, macOS. System monitoring, filesystems, permissions, services, process management.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Scripting & Automation:</strong> Bash scripting, Python for automation and system tasks, Git & GitHub, CI/CD-style deployments.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Networking & Systems:</strong> TCP/IP fundamentals, DNS (authoritative records, TLS integration), reverse proxies (Traefik), CDN-based ingress control (Cloudflare), HTTPS enforcement, automated TLS (Let's Encrypt/ACME).</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Security & Detection:</strong> Log collection and analysis, ELK Stack (Elastic, Logstash, Kibana), NiFi log flow management, SIEM workflows, detection logic and alerting pipelines, threat hunting, system hardening.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Platform & Deployment:</strong> Docker containerization, Git-based deployments, application health checks, domain routing, email infrastructure (SPF, DKIM, DMARC).</li>
+                <li style="margin-bottom: 0.5rem;"><strong>IT Operations:</strong> Technical documentation and SOP creation, hardware/software troubleshooting, end-user support, IT procurement research.</li>
             </ul>
         </div>
 
@@ -73,28 +75,41 @@
             <h2 style="text-align: left; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; font-size: 1.5rem;">Professional Experience</h2>
             
             <div class="cv-job" style="margin-top: 1.5rem;">
-                <h3 style="font-size: 1.2rem; color: var(--accent-color);">Cybersift — SOC Governance Specialist & Junior Analyst</h3>
+                <h3 style="font-size: 1.2rem; color: var(--accent-color);">SEO Technology — Infrastructure / Platform Engineer</h3>
+                <p style="font-style: italic; color: var(--text-muted); margin-bottom: 0.5rem;">Jan 2023 – Present | Hsinchu, Taiwan | <a href="https://seotechnology.com.tw" target="_blank" style="color: var(--accent-color);">seotechnology.com.tw</a></p>
+                <ul style="list-style-type: disc; padding-left: 1.5rem; color: var(--text-main);">
+                    <li>Designed, deployed, and currently operate SEO Technology's production web infrastructure, migrating from legacy hosting to a containerized, Git-based deployment platform.</li>
+                    <li>Own end-to-end production operations including VPS administration, Linux systems management, DNS, reverse proxy configuration, and automated TLS via Let's Encrypt (ACME).</li>
+                    <li>Implemented CI/CD-style deployments from GitHub using Docker-based builds, enabling reliable updates, rapid iteration, and rollback-safe releases.</li>
+                    <li>Configured domain routing, HTTPS enforcement, and application health checks for a production Next.js environment.</li>
+                    <li>Implemented Cloudflare-fronted ingress with host firewall controls to reduce direct origin exposure and enforce centralized traffic entry.</li>
+                    <li>Automated operational firewall maintenance with structured logging and log rotation to ensure long-term reliability and auditability.</li>
+                    <li>Continue to expand and harden the platform, including email infrastructure (SPF, DKIM, DMARC), security improvements, and onboarding of additional business applications.</li>
+                </ul>
+            </div>
+
+            <div class="cv-job" style="margin-top: 1.5rem;">
+                <h3 style="font-size: 1.2rem; color: var(--accent-color);">Cybersift — SOC Governance Specialist</h3>
                 <p style="font-style: italic; color: var(--text-muted); margin-bottom: 0.5rem;">Oct 2024 – Apr 2025</p>
                 <ul style="list-style-type: disc; padding-left: 1.5rem; color: var(--text-main);">
-                    <li>Supported Linux-based SOC infrastructure and operational workflows.</li>
-                    <li>Documented onboarding procedures and created technical SOPs.</li>
+                    <li>Supported Linux-based SOC infrastructure and security operations workflows.</li>
+                    <li>Documented onboarding procedures, escalation paths, and created technical SOPs.</li>
                     <li>Performed threat hunting and system analysis using SIEM platforms.</li>
-                    <li>Built dashboards and visualizations for operational insight.</li>
-                    <li>Led ticket hygiene initiatives and process improvements.</li>
-                    <li>Completed PCI-DSS SAQ-D documentation.</li>
+                    <li>Built dashboards and visualizations to improve operational visibility and analyst efficiency.</li>
+                    <li>Led ticket hygiene initiatives and process improvements across SOC operations.</li>
+                    <li>Completed PCI-DSS SAQ-D documentation and supported compliance activities.</li>
                     <li>Promoted from Junior SOC Analyst within two months based on performance.</li>
                 </ul>
             </div>
 
             <div class="cv-job" style="margin-top: 1.5rem;">
-                <h3 style="font-size: 1.2rem; color: var(--accent-color);">Seyo International — IT Support & Procurement Research</h3>
-                <p style="font-style: italic; color: var(--text-muted); margin-bottom: 0.5rem;">Jan 2023 – Dec 2025 | Hsinchu, Taiwan</p>
+                <h3 style="font-size: 1.2rem; color: var(--accent-color);">Cybersift — Junior SOC Analyst</h3>
+                <p style="font-style: italic; color: var(--text-muted); margin-bottom: 0.5rem;">Oct 2024 – Jan 2025</p>
                 <ul style="list-style-type: disc; padding-left: 1.5rem; color: var(--text-main);">
-                    <li>Provided IT support for staff across Linux, Windows, and macOS systems.</li>
-                    <li>Troubleshot OS, application, network, and hardware issues.</li>
-                    <li>Supported system maintenance, software installation, and updates.</li>
-                    <li>Maintained and supported web services (WordPress).</li>
-                    <li>Conducted IT procurement research and vendor evaluation.</li>
+                    <li>Monitored Linux-based SIEM environments and managed detection pipelines.</li>
+                    <li>Created and tuned detection logic and alerting rules.</li>
+                    <li>Investigated system and security anomalies using log-based analysis.</li>
+                    <li>Maintained playbooks and documented incident response procedures.</li>
                 </ul>
             </div>
 
