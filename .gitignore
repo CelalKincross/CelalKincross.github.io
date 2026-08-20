@@ -87,3 +87,8 @@ lerna-debug.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Private material — may be a directory or a symlink. Never commit.
+# No trailing slash: git treats a symlink as a file.
+personal
+**/personal
